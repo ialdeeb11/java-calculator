@@ -1,52 +1,66 @@
 
 public class calculator {
 
-    static int x = 8;
-    static int y = 4;
+    int x = 6;
+    int y = 0;
 
     public static void main(String args[]) {
+        calculator calc = new calculator();
+        calc.result();
 
     }
 
-    public static int sum() {
+    public void result() {
 
-        int result = calculator.x + calculator.y;
+        System.out.println("x = " + this.x);
+        System.out.println("y = " + this.y);
+        System.out.println("+: " + this.sum());
+        System.out.println("-: " + this.sub());
+        System.out.println("*: " + this.multi());
+
+        if (this.y == 0) {
+            System.out.println("connot divid by 0");
+        } else {
+            System.out.println("/: " + this.div());
+        }
+
+    }
+
+    public int sum() {
+
+        int result = this.x + this.y;
 
         return result;
     }
 
-    public static int sub() {
+    public int sub() {
 
-        int result = calculator.x - calculator.y;
+        int result = this.x - this.y;
 
         return result;
 
     }
 
-    public static int multi() {
+    public int multi() {
 
-        int result = calculator.x * calculator.y;
-
-        return result;
-    }
-
-    public static int div() {
-
-        int result = calculator.x / calculator.y;
+        int result = this.x * this.y;
 
         return result;
     }
-}
 
-class test {
-    public static void main(String args[]) {
-        System.out.println("x = " + calculator.x);
-        System.out.println("y = " + calculator.y);
-        System.out.println("+: " + calculator.sum());
-        System.out.println("-: " + calculator.sub());
-        System.out.println("*: " + calculator.multi());
-        System.out.println("/: " + calculator.div());
+    public int div() {
 
+        if (this.y == 0) {
+
+            return this.y;
+        }
+
+        else {
+
+            int result = this.x / this.y;
+
+            return result;
+
+        }
     }
-
 }
